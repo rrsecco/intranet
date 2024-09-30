@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntraNET - PDA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="../imgs/cards/card_lucky.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../imgs/background/back_principal.png" alt="Logo">
+        </div>
+        <ul class="nav-list">
+            <li><a href="#" onclick="loadOption('sorte_ou_azar')" id="s1">Sorte ou Azar</a></li>
+            <li><a href="#" onclick="loadOption('consequencias')" id="s2">Zona de Perigo</a></li>
+            <li><a href="#" onclick="loadOption('curiosidades')" id="s3">Curiosidades</a></li>
+            <li><a href="#" onclick="loadOption('quizes')" id="s4">Quizes</a></li>
+            <li><a href="#" onclick="loadOption('list')" id="list_list" style="background-color: red;">Listagem</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="form-group" id="content-container">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOption('sorte_ou_azar');
+        });
+
+        window.addEventListener('beforeunload', function (event) {
+            // Define a mensagem de aviso
+            var message = "Tem certeza que deseja sair desta página? As mudanças não salvas serão perdidas.";
+            
+            // Para navegadores modernos
+            event.preventDefault();
+            event.returnValue = message; 
+            
+            // Para navegadores mais antigos
+            return message;
+        });
+
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
